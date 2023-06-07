@@ -1,6 +1,6 @@
 # ECOSPORT-FW_PHP_OO_MVC_jQuery_Guillem
 
-                                          Los lenguajes utilizados durante el desarrollo son los siguientes:
+<p align="center">Los lenguajes utilizados durante el desarrollo son los siguientes:</p>
 <p align="center">
   <a href="https://skillicons.dev">
     <img src="https://skillicons.dev/icons?i=bootstrap,css,html,js,php,github" />
