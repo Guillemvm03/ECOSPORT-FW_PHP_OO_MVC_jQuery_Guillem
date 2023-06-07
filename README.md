@@ -17,7 +17,7 @@ _¿Como está estructurado?_
 
 La web se compone de los siguientes módulos:
 
-1️⃣ __Home__ :
+1️⃣ __Home__ 🏠:
 
   El módulo principal donde se muestran los siguientes apartados:
   * Carrusel de búsqueda por marcas de coche.
@@ -26,7 +26,7 @@ La web se compone de los siguientes módulos:
   * Carrusel con los coches más visitados.
   * Listado de revistas relacionadas con coches.
   
-2️⃣ __Shop__ :
+2️⃣ __Shop__ 💵:
 
   El módulo donde se puede visualizar el listado de coches disponibles. Incluye lo siguiente:
   * Listado de los coches almacenados.
@@ -38,14 +38,14 @@ La web se compone de los siguientes módulos:
   * Opción de Me gusta. Requiere iniciar sesión con un usuario.
   * Botón para ver los detalles de cada coche. Incluye las características de este, opción de Me gusta, opción para añadir unidades al carrito, ubicación en el mapa y listado con los coches relacionados.
 
-3️⃣ __Search__ :
+3️⃣ __Search__ 🔎:
 
   El módulo que sirve para buscar coches desde cualquier parte de la aplicación web. Incluye lo siguiente:
   * Filtro por marca.
   * Filtro por modelo, dependiendo de la marca seleccionada.
   * Filtro por ciudad, dependiendo de la marca y del modelo seleccionado.
 
-4️⃣ __Login__ :
+4️⃣ __Login__ 🙎:
 
   El módulo que sirve para poder identificarte con un usuario. Incluye lo siguiente:
   * Opción de iniciar sesión con un nombre de usuario y una contraseña.
@@ -55,7 +55,7 @@ La web se compone de los siguientes módulos:
   * Una vez se ha iniciado sesión, se muestra el nombre del usuario con su avatar y la opción de cerrar sesión.
   * Existen algunas funciones como dar Me gusta o añadir al carrito, las cuales requieren un inicio de sesión.
 
-5️⃣ __Cart__ :
+5️⃣ __Cart__ 🛒:
 
   El módulo que permite añadir al carrito los coches y proceder a la compra de estos. Incluye lo siguiente:
   * Desde la ventana de detalles de un coche, opción para añadir al carrito la cantidad seleccionada. Se requiere inicio de sesión y se tiene en cuenta el stock del coche a la hora de sumar unidades.
