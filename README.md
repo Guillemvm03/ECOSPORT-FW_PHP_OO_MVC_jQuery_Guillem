@@ -10,23 +10,56 @@ Esta es una aplicación web de venta de vehículos online desarrollada con:
 </p>
 La aplicación sigue una arquitectura <strong>Modelo-Vista-Controlador (MVC)</strong> y utiliza el <strong>framework jQuery</strong>. También se ha implementado el uso de JSON Web <strong>Tokens (JWT)</strong> para la creación de tokens de autenticación, así como la integración de <strong>Mailgun</strong> para el envío de correos electrónicos de <strong>verificación de cuenta y recuperación de contraseña.</strong>
 
-## Características principales
+_¿Como está estructurado?_
 
-La aplicación cuenta con los siguientes módulos:
+La web se compone de los siguientes módulos:
 
-<h3><strong>1. Home:</strong></h3>
- Muestra la página principal de la aplicación, proporcionando información general sobre la plataforma de venta de vehículos online. Donde podemos <strong>filtrar</strong> por marca con <strong>carrusel</strong>, categoria, tipo de combustible y también se muestran los mas visitados. Tenemos una selección de revistas relacionadas con el mundo del motor con <strong>scroll</strong>, mediante una <strong>api</strong> donde se enlaza para su compra.
+1️⃣ __Home__ :
 
-<h3><strong>2. Shop:</strong></h3>
- Permite a los usuarios explorar y buscar vehículos disponibles para la venta. Los usuarios pueden aplicar <strong>filtros</strong> y ver detalles específicos de cada vehículo, como descripción, características, precio, etc. Posee <strong>paginado</strong> para mostrar los resultados de la busqueda o de todos los vehículos Tenemos una <strong>geolocalización</strong> donde se encuentran los vehículos y una pequeña descripcion e imagen en el mapa, donde podemos ir a ver los detalles de los mismos. Tambien nos encontramos un <strong>search</strong> en el menu de la página, donde automaticamente se autocompleta por marca, categoria o ciudad, al seleccionar uno de los de busqueda. Se le pueden asignar <strong>likes</strong> a los productos, logeado y deslogueado, si estas deslogueado te redirige a login para loguearte y enviate al vehiculo en cuestion. En este módulo cuando se selecciona un coche para ver en detalle la información, mostramos también vehículos relacionados en este caso por marca con <strong>scroll</strong>.
+  El módulo principal donde se muestran los siguientes apartados:
+  * Carrusel de búsqueda por marcas de coche.
+  * Selector de filtro por categoría de coche.
+  * Selector de filtro por tipo de motor.
+  * Carrusel con los coches más visitados.
+  * Listado de revistas relacionadas con coches.
+  
+2️⃣ __Shop__ :
 
-<h3><strong>3. Contacto:</strong></h3> 
-Proporciona un formulario de contacto donde los usuarios pueden enviar consultas o comentarios sobre la aplicación o los vehículos en venta.
+  El módulo donde se puede visualizar el listado de coches disponibles. Incluye lo siguiente:
+  * Listado de los coches almacenados.
+  * Selector de filtros por marca, tipo de motor, categoría y color.
+  * Opciones como eliminar los filtros aplicados y seleccionar cualquiera de los filtros aplicados anteriormente.
+  * Selector de orden por kilómetros, precio y más visitados, tanto ascendente como descendente.
+  * Selector de página.
+  * Componente de mapa con las ubicaciones de los coches.
+  * Opción de Me gusta. Requiere iniciar sesión con un usuario.
+  * Botón para ver los detalles de cada coche. Incluye las características de este, opción de Me gusta, opción para añadir unidades al carrito, ubicación en el mapa y listado con los coches relacionados.
 
-<h3><strong>4. Login y Register:</strong></h3>
-Estos módulos permiten a los usuarios crear una cuenta o iniciar sesión en la aplicación. Se utiliza <strong>JWT</strong> para autenticar a los usuarios y proporcionar acceso seguro a las funcionalidades. Posee <strong>verificación</strong> por correo electrónico y <strong>recuperación</strong> de contraseña. 
+3️⃣ __Search__ :
 
-<h3>5. Carrito:</h3> Permite a los usuarios agregar vehículos de interés a su carrito de compras y realizar la <strong>compra</strong> posteriormente.
+  El módulo que sirve para buscar coches desde cualquier parte de la aplicación web. Incluye lo siguiente:
+  * Filtro por marca.
+  * Filtro por modelo, dependiendo de la marca seleccionada.
+  * Filtro por ciudad, dependiendo de la marca y del modelo seleccionado.
+
+4️⃣ __Login__ :
+
+  El módulo que sirve para poder identificarte con un usuario. Incluye lo siguiente:
+  * Opción de iniciar sesión con un nombre de usuario y una contraseña.
+  * Opción de registrarse con un nombre de usuario, un correo electrónico y una contraseña. El nombre y el correo no se pueden repetir, y todos los campos deben de cumplir unos requisitos, como la longitud o algunos carácteres especiales. Requiere una verificación que se envía al correo electrónico para poder iniciar sesión.
+  * Opción de iniciar sesión con cuentas de Google y GitHub.
+  * Opción de recuperar la contraseña mediante correo electrónico.
+  * Una vez se ha iniciado sesión, se muestra el nombre del usuario con su avatar y la opción de cerrar sesión.
+  * Existen algunas funciones como dar Me gusta o añadir al carrito, las cuales requieren un inicio de sesión.
+
+5️⃣ __Cart__ :
+
+  El módulo que permite añadir al carrito los coches y proceder a la compra de estos. Incluye lo siguiente:
+  * Desde la ventana de detalles de un coche, opción para añadir al carrito la cantidad seleccionada. Se requiere inicio de sesión y se tiene en cuenta el stock del coche a la hora de sumar unidades.
+  * Una vez añadido al carrito un artículo, se puede acceder a la ventana para visualizar su contenido.
+  * Dentro del carrito, se pueden ver los coches añadidos con su imagen (si se hace click en la imagen, se redirige a los detalles del coche), su nombre, su cantidad (se puede actualizar la cantidad desde el propio carrito, con comprobación de stock), su precio y un botón de eliminar del carrito.
+  * Precio total del carrito. Si se cambia la cantidad de un coche, se actualiza automáticamente el precio total.
+  * Opción de realizar compra. Se actualiza el stock de los coches en la base de datos y se elimina el carrito. 
 
 ## Requisitos previos
 
