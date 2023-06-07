@@ -1,0 +1,162 @@
+
+/* CSS PARA LAS TARJETAS HOME */
+
+#containerCategories {
+  /* background-color: #fbffff; */
+  z-index: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.portfolio-item {
+  margin: 30px auto;
+  width: 200px;
+  height: 200px;
+  border-radius: 40px;
+  box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.portfolio-item .card_image {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+}
+
+.portfolio-item .card_image img {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+  /* object-fit: cover; */
+  object-fit: scale-down;
+}
+
+ .portfolio-item .card_title {
+  text-align: center;
+  border-radius: 0px 0px 40px 40px;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: -20px;
+  height: 100px;
+}
+
+.portfolio-item:hover {
+  transform: scale(0.9, 0.9);
+  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
+    -5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+
+/* .title-white {
+  color: white;
+}
+
+.title-black {
+  padding-top: 10%;
+  color: black;
+}
+
+.title-black p {
+  font-size: 80%;
+  font: bold sans-serif;
+} */
+
+@media all and (max-width: 500px) {
+  #containerCategories {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
+  }
+}
+
+#top {
+  display: table-cell;
+  position: relative;
+  width: 100%;
+  height: 100px;
+  background-color: #07374f;
+  vertical-align:middle;
+}
+
+/* --------------------------------------------- */
+
+#cards-list2 {
+  background-color: #fbffff;
+  z-index: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  
+}
+
+.card2 {
+  margin: 30px auto;
+  width: 200px;
+  height: 200px;
+  border-radius: 40px;
+  box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.card2 .card_image2 {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+}
+
+.card2 .card_image2 img {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+  /* object-fit: cover; */
+  object-fit: scale-down;
+}
+
+.card2 .card_title2 {
+  text-align: center;
+  border-radius: 0px 0px 40px 40px;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: -20px;
+  height: 100px;
+}
+
+.card2:hover {
+  transform: scale(0.9, 0.9);
+  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
+    -5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+
+@media all and (max-width: 500px) {
+  #card-list2 {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
+  }
+}
+
+#top {
+  display: table-cell;
+  position: relative;
+  width: 100%;
+  height: 100px;
+  background-color: #07374f;
+  vertical-align:middle;
+}
+
+#top h2{
+text-shadow: 2px 2px #d71020;
+  text-align: center;
+  color: #fffefe;
+  font-family:"Impact";
+}
+
+
+/* ----------------------------------------- */
+
+
+
