@@ -1,5 +1,4 @@
 # ECOSPORT-FW_PHP_OO_MVC_jQuery_Guillem
-# README
 
 Esta es una aplicación web de venta de vehículos online desarrollada con:
 <p align="center">
@@ -10,6 +9,9 @@ Esta es una aplicación web de venta de vehículos online desarrollada con:
 </p>
 La aplicación sigue una arquitectura <strong>Modelo-Vista-Controlador (MVC)</strong> y utiliza el <strong>framework jQuery</strong>. También se ha implementado el uso de JSON Web <strong>Tokens (JWT)</strong> para la creación de tokens de autenticación, así como la integración de <strong>Mailgun</strong> para el envío de correos electrónicos de <strong>verificación de cuenta y recuperación de contraseña.</strong>
 
+
+
+#GENERAL INFORMATION
 _¿Como está estructurado?_
 
 La web se compone de los siguientes módulos:
