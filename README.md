@@ -11,7 +11,8 @@ La aplicación sigue una arquitectura <strong>Modelo-Vista-Controlador (MVC)</st
 
 
 
-#GENERAL INFORMATION
+## Contenido 📖
+
 _¿Como está estructurado?_
 
 La web se compone de los siguientes módulos:
