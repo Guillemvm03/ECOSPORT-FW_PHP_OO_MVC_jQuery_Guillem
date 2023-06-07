@@ -37,10 +37,7 @@
 
         public function get_checkout($args) {
             return $this -> bll -> get_checkout_BLL($args);
-
         }
-
-
 
     }
 ?>

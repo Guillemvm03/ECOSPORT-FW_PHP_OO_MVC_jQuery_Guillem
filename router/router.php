@@ -2,13 +2,6 @@
 
     require 'autoload.php';
     
-    // $path = $_SERVER['DOCUMENT_ROOT'] . '/FW_PHP_OO_MVC_jQuery_Guillem/';
-    // include($path . "utils/common.inc.php");
-    // include($path . "utils/mail.inc.php");
-    // include($path . "paths.php");
-
-
-
     ob_start();
     session_start();
 
@@ -51,7 +44,7 @@
                 $modules = simplexml_load_file('resources/modules.xml');
                 foreach ($modules as $row) {
                     if (in_array($this -> uriModule, (Array) $row -> uri)) {
-                        // $path = 'module/contact/controller/controller_contact.class.php';
+                       
                         $path = MODULES_PATH . $row -> name . '/controller/controller_' . (String) $row -> name . '.class.php';
                         if (file_exists($path)) {
                             require_once($path);
@@ -66,7 +59,6 @@
         }
         
         private function loadFunction() {
-            // $path = 'module/contact/resources/function.xml';
             $path =  MODULES_PATH . $this -> nameModule . '/resources/function.xml'; 
             if (file_exists($path)) {
                 $functions = simplexml_load_file($path);

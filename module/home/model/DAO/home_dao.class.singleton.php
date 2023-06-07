@@ -1,9 +1,5 @@
 <?php
 
-// require_once(MODEL_PATH . 'connect.php');
-
-// include('C:\xampp\htdocs\FW_PHP_OO_MVC_jQuery_Guillem\model\connect.php');
-
     class home_dao {
         static $_instance;
 

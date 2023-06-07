@@ -59,14 +59,12 @@
             $rdo[1][] = $array;
 
             return $rdo;
-            // return $db->listar($array);
-            // return $db->listar($rdo);
+            
         }
 
 
         function select_filters($db,$filter){
             
-            // return $filter;
            
             $sql = "SELECT DISTINCT c.*
             FROM car c INNER JOIN img_cars i INNER JOIN category ca INNER JOIN type_motor t INNER JOIN model m 
@@ -78,7 +76,7 @@
                       
                       if ($i==0){
                         if ($filter[0][$i][0] == 'orden'){
-                            // return 'hola order';
+                           
                             $sql.= " ORDER BY " . $filter[0][$i][1] . " ASC";
 
                         }else{
@@ -96,8 +94,6 @@
                       }
                   }
 
-       
-    
                   $stmt = $db->ejecutar($sql);
                   return $db->listar($stmt);
 
@@ -247,8 +243,6 @@
             FROM car c 
             WHERE c.motor = '$type_car'";
 
-
-            // return $sql;
             $stmt = $db->ejecutar($sql);
             return $db->listar($stmt);
 
@@ -258,9 +252,7 @@
 
 
         function select_related($db,$type, $loaded, $items){
-
-
-                    
+       
             $sql = "SELECT * 
 					FROM car c, model m
 					WHERE c.model = m.id_model 
@@ -273,7 +265,6 @@
 
 
         public function select_search($db, $filters_search) {
-            
             
                 $count = 1;
 
@@ -299,18 +290,14 @@
                         } 
                 
                     }else{
-                        // return 'hola s';
+                        
                         if (!empty($filters_search[2]['city']) && $filters_search[2]['city'][0]) {
 
                             $sql .= "AND m.id_brand = '". $filters_search[0]['brand'][0] ."' AND c.category = '" . $filters_search[1]['category'][0] . "'  AND c.city = '" . $filters_search[2]['city'][0] . "'";
-
-                                // $sql .= "AND m.id_brand = '". $filters_search[0]['brand'][0] ."' AND c.category = '" . $filters_search[1]['category'][0] . "'";
-                                // $count = 2;
                                 
                         }  
                     }  
 
-                    // return $sql;
                     $stmt = $db->ejecutar($sql);
                     return $db->listar($stmt);
 
@@ -329,14 +316,12 @@
 
             $stmt = $db->ejecutar($sql);
             return $db->listar($stmt);
-            // return $sql;
+    
         }
 
 
         public function insert_car_cart($db, $id_prod, $username) {
             
-
-      
             $sql = "INSERT INTO cart ( id_car, username, quantity) VALUES ('$id_prod','$username', '1')";
 
     
@@ -346,8 +331,6 @@
 
         public function select_car_cart($db, $id_prod, $username) {
             
-
-      
             $sql = "SELECT c.cod_prod ,cc.id_car, cc.stock, cc.price, cc.motor, cc.img_car, cc.gear_shift, m.id_brand, m.name_model, c.quantity  FROM cart c, car cc, model m, brand b WHERE c.id_car=cc.id_car AND m.id_model = cc.model AND m.id_brand = b.name_brand  AND username='$username' AND c.id_car='$id_prod'";
 
             $stmt = $db -> ejecutar($sql);
@@ -356,12 +339,9 @@
 
         function update_car_cart($db, $id_prod, $username){
         
-            // return $cod_prod;
-            $sql = "UPDATE cart SET quantity = quantity + 1 WHERE username='$username' AND id_car='$id_prod'";
-            
-         
+            $sql = "UPDATE cart SET quantity = quantity + 1 WHERE username='$username' AND id_car='$id_prod'";  
             $stmt = $db -> ejecutar($sql);
-            // return $db -> listar($stmt);
+    
         }
 
     }

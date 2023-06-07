@@ -12,7 +12,7 @@ function remove_cart(){
             .then(function(data) { 
               console.log(data);
               location.reload();
-                // $('div.basket-product#'+ codigo_producto).empty();
+              
             }).catch(function() {
                 window.location.href = 'index.php?page=error503'
             });   
@@ -117,7 +117,7 @@ function load_cart(){
           var total_price = 0;
 
           for (row in data) {
-          //   console.log(data);
+
 
               $(".cart__products").append(
 
@@ -161,7 +161,7 @@ function load_cart(){
               total_price += rowSubtotal * 1.21;
 
           }    
-          // console.log(total_price);
+    
 
           document.getElementById("subtotal_element").textContent = 'SUBTOTAL '+subtotal + ' $';
           document.getElementById("total_element").textContent = 'TOTAL '+total_price + ' $';

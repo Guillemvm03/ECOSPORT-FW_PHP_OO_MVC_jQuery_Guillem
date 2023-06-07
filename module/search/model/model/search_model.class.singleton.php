@@ -16,13 +16,10 @@
 
         public function get_load_brands() {
             return $this -> bll -> get_load_brands_BLL();
-            
         }
 
         public function get_search_category_null() {
             return $this -> bll -> get_search_category_null_BLL();
-            
-            
         }
 
         public function get_search_category($args) {

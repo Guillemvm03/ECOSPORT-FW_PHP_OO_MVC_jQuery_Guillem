@@ -226,9 +226,7 @@ function loadsuggestions() {
 
         for (i = 0; i < DatosJson.items.length; i++) {
           $('<div id="prueba"></div>').appendTo('#featured').html(
-            // "<div class='tit_rev'>"+
-            // "<h1>Revistas</h1>"+
-            // "</div>"+
+         
             "<br><div id='cont_img'><img src='" + data['items'][i]['volumeInfo']['imageLinks']['thumbnail'] + "' class='cart' cat='" + data['items'][i]['volumeInfo']['categories'] + "' data-toggle='modal' data-target='#exampleModal'></div><div id='list_header'><span id='li_brand'>  " + DatosJson.items[i].volumeInfo.title + "</br>" + "</span></div>" +
             '<textarea rows="10">' + data['items'][i]['volumeInfo']['description'] + '</textarea>' +
             '<br>' +
@@ -302,7 +300,7 @@ function getSuggestions() {
 }
 
 $(document).ready(function() {
-  // loadContentModal();
+
   carousel_Brands();
   loadCategories();
   loadCatTypes();

@@ -1,7 +1,5 @@
 <?php
 
-// require_once(BLL_HOME . 'home_bll.class.singleton.php');
-
     class home_model {
 
         private $bll;

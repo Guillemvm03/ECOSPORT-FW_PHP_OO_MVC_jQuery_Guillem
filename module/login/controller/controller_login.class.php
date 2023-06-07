@@ -23,38 +23,24 @@
         }
 
         function social_login() {
-            // echo json_encode($_POST['id']);
             echo json_encode(common::load_model('login_model', 'get_social_login', [$_POST['id'], $_POST['username'], $_POST['email'], $_POST['avatar']]));
         } 
     
         function verify_email() {
             $verify = json_encode(common::load_model('login_model', 'get_verify_email', $_POST['token_email']));
-            echo json_encode($verify);
-            // if (!empty($verify)) {
-            //     return;
-            // }
-            
+            echo json_encode($verify);         
         }
 
         function send_recover_email() {
-            echo json_encode(common::load_model('login_model', 'get_recover_email', $_POST['email_reg_recover']));
-
-            // echo json_encode($_POST['email_reg_recover']);
-          
+            echo json_encode(common::load_model('login_model', 'get_recover_email', $_POST['email_reg_recover']));          
         }
 
         function verify_token() {
-            // echo json_encode($_POST['token_email']);
             echo json_encode(common::load_model('login_model', 'get_verify_token', $_POST['token_email']));
         }
 
         function new_password() {
-            // echo json_encode([$_POST['token_email'], $_POST['password']]);
             echo json_encode(common::load_model('login_model', 'get_new_password', [$_POST['token_email'], $_POST['password']]));
-            // if (!empty($password)) {
-            //     echo $password;
-            //     return;
-            // }
         }  
     
         function logout() {

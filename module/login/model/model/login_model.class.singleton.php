@@ -15,13 +15,11 @@ class login_model {
     }
 
     public function get_register($args) {
-        return $this -> bll -> get_register_BLL($args);
-        
+        return $this -> bll -> get_register_BLL($args);  
     }
 
     public function get_login($args) {
         return $this -> bll -> get_login_BLL($args);
-        // return 'hoal';
     }
 
     public function get_social_login($args) {
@@ -34,21 +32,17 @@ class login_model {
 
     public function get_recover_email($args) {
         return $this -> bll -> get_recover_email_BBL($args);
-        // return 'hola';
     }
 
 
 
     public function get_verify_token($args) {
         return $this -> bll -> get_verify_token_BLL($args);
-    
     }
 
     public function get_new_password($args) {
         return $this -> bll -> get_new_password_BLL($args);
     }
-
-
 
     public function get_data_user($args) {
         return $this -> bll -> get_data_user_BLL($args);

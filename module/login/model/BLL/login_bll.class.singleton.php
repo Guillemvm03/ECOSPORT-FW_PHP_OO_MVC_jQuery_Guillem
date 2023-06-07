@@ -126,7 +126,6 @@
 
 			if($this -> dao -> select_verify_email($this->db, $args)){
 
-				// return $this -> dao -> update_verify_email($this->db, $args)
 				return 'verify';
 			}else{
 				return 'fail';
@@ -164,7 +163,6 @@
 					return (time() - $_SESSION["tiempo"]);
 				}
 			}
-			// return ($_SESSION["tiempo"]);
 		}
 
 		public function get_controluser_BLL($args) {
@@ -204,6 +202,6 @@
 			} else{
 				return "activo";
 			}
-			// return $decode;
+
 		}
 	}

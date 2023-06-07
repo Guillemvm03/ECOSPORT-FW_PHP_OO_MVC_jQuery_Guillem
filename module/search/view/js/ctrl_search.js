@@ -1,10 +1,7 @@
 function load_brands() {
     ajaxPromise(friendlyURL("?module=search&op=load_brands"), 'POST', 'JSON')
         .then(function(data) {
-            // console.log(data);
 
-
-            
             $('<option>Brand</option>').attr('selected', true).attr('disabled', true).appendTo('.search_brand')
             for (row in data) {
                 $('<option value="' + data[row].name_brand + '">' + data[row].name_brand + '</option>').appendTo('.search_brand')
@@ -20,7 +17,6 @@ function load_category(brand) {
     if (brand == undefined) {
         ajaxPromise(friendlyURL("?module=search&op=search_category_null"), 'POST', 'JSON')
             .then(function(data) {
-                // console.log(data);
 
                 $('<option>Category</option>').attr('selected', true).attr('disabled', true).appendTo('.search_category')
                 for (row in data) {
@@ -33,8 +29,7 @@ function load_category(brand) {
     else {
         ajaxPromise(friendlyURL("?module=search&op=search_category"), 'POST', 'JSON', brand)
             .then(function(data) {
-                // console.log(data);
-                
+            
                 for (row in data) {
                     $('<option value="' + data[row].id_cat + '">' + data[row].name_cat + '</option>').appendTo('.search_category')
                 }

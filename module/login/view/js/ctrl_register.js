@@ -1,27 +1,23 @@
 
 function register() {
-   
-    //   var data = $('#register__form').serialize();
-    //     console.log(data);
+
 
     if (validate_register() != 0) {
         var data = $('#register__form').serialize();
-        
-        // console.log(data);
-        // ajaxPromise(friendlyURL('?module=login&op=register'), 'POST', 'JSON', {'data':data})
+
         ajaxPromise(friendlyURL("?module=login&op=register"), 'POST', 'JSON', data)
-            .then(function(result) {
+            .then(function (result) {
                 console.log(result);
-                if(result == "error"){		
+                if (result == "error") {
                     $("#error_email_reg").html('The email is already in use');
                     $("#error_username_reg").html('The username is already in use');
 
                 } else {
                     toastr.success("Check your mail and verify the account");
-                   
+
                     setTimeout(' window.location.href = friendlyURL("?module=home")', 1000);
                 }
-            }).catch(function(textStatus) {
+            }).catch(function (textStatus) {
                 if (console && console.log) {
                     console.log("La solicitud ha fallado: " + textStatus);
                 }
@@ -32,9 +28,8 @@ function register() {
 }
 
 function key_register() {
-    // console.log('hola');
 
-    $("#register").keypress(function(e) {
+    $("#register").keypress(function (e) {
         var code = (e.keyCode ? e.keyCode : e.which);
         if (code == 13) {
             e.preventDefault();
@@ -44,9 +39,8 @@ function key_register() {
 }
 
 function button_register() {
-    // console.log('hola1');
-    
-    $('#register').on('click', function(e) {
+
+    $('#register').on('click', function (e) {
         e.preventDefault();
         register();
     });
@@ -128,9 +122,8 @@ function validate_register() {
 }
 
 
-$(document).ready(function() {
+$(document).ready(function () {
     key_register();
     button_register();
 
-    // console.log('hola register');
 });

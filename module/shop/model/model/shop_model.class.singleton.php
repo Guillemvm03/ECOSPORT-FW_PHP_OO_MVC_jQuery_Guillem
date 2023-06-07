@@ -27,7 +27,6 @@
 
         public function get_filters($args) {
             return $this -> bll -> get_filters_BLL($args);
-            // return 'hola ';
         }
         
         public function get_filters_search($args) {
@@ -39,12 +38,10 @@
         }
 
         public function get_count() {
-
             return $this -> bll -> get_count_BLL();
         }
 
         public function get_count_search() {
-
             return $this -> bll ->  get_count_search_BLL();
         }
 

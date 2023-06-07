@@ -6,32 +6,28 @@ function loadCars(total_prod = 0, items_page = 3) {
 
     var filter = JSON.parse(localStorage.getItem('filter', filter));
     var id_cars = JSON.parse(localStorage.getItem('id_cars', id_cars));
-
     var brand_filter = JSON.parse(localStorage.getItem('brand_filter', brand_filter));
     var category_filter = JSON.parse(localStorage.getItem('category_filter', category_filter));
     var motor_filter = JSON.parse(localStorage.getItem('motor_filter', motor_filter));
-
     var id_car = localStorage.getItem('id_car', id_car);
-
     var filters_search = JSON.parse(localStorage.getItem('filters_search', filters_search));
 
     if (filter) {
 
         ajaxForSearch('?module=shop&op=filters', filter);
 
-        // console.log(filter);
     } else if (brand_filter) {
 
         load_brand_filter(total_prod, items_page);
 
     } else if (category_filter) {
-  
+
         load_category_filter(total_prod, items_page);
- 
+
     } else if (motor_filter) {
 
         load_motor_filter(total_prod, items_page);
-       
+
     } else if (id_car) {
 
         loadDetails(id_car);
@@ -41,9 +37,9 @@ function loadCars(total_prod = 0, items_page = 3) {
         load_popular_detail();
 
     } else if (filters_search) {
-        
+
         load_search();
-        
+
     } else {
 
         ajaxForSearch('?module=shop&op=list', undefined, total_prod, items_page);
@@ -63,7 +59,7 @@ function ajaxForSearch(url, filter, total_prod = 0, items_page) {
             total_prod = 0;
         }
     }
-    // console.log(total_prod, items_page);
+
     ajaxPromise(friendlyURL(url), 'POST', 'JSON', { 'filter': filter, 'total_prod': total_prod, 'items_page': items_page })
         .then(function (data) {
             console.log(data);
@@ -135,7 +131,6 @@ function clicks() {
 
 
     $(document).on("click", ".details__heart", function () {
-        // console.log('Holsaojd');
         var id_car = this.getAttribute('id');
         click_like(id_car, "details");
     });
@@ -169,12 +164,11 @@ function loadDetails(id_car) {
 
             $('#pagination').empty();
             $('#content_shop_cars').empty();
-            // $('.date_car' && '.date_img').empty();
             $('#containerShop').empty();
             $('.div-filters').empty();
             $('#tyouilo').empty();
             $('.btn-group').empty();
-            
+
             $('#map-details-1').show();
 
 
@@ -229,7 +223,7 @@ function loadDetails(id_car) {
 
                 )
 
-            // load_likes_user();
+                load_likes_user();
 
             new Glider(document.querySelector('.date_img'), {
                 slidesToShow: 2,
@@ -237,12 +231,12 @@ function loadDetails(id_car) {
                 draggable: true,
                 dots: '.dots',
                 arrows: {
-                  prev: '.glider-prev',
-                  next: '.glider-next'
+                    prev: '.glider-prev',
+                    next: '.glider-next'
                 }
-              });
-              more_cars_related(data[0][0].motor);
-              mapBox(data[0][0]);
+            });
+            more_cars_related(data[0][0].motor);
+            mapBox(data[0][0]);
 
 
         }).catch(function () {
@@ -256,7 +250,7 @@ function print_filters() {
     $('<div class="div-filters"></div>').appendTo('.filters')
         .html(
             '<select class="filter_type">' +
-        
+
             '<option value="all_t">All type</option>' +
             '<option value="E">Electric</option>' +
             '<option value="H">Hybrid</option>' +
@@ -307,13 +301,13 @@ function print_filters() {
             '</div > ' +
             '</div>' +
             '</div>' +
-            '<p> </p>'+
-            '</br>'+
+            '<p> </p>' +
+            '</br>' +
             '<button class="filter_button button_spinner" id="Button_filter">Filter</button>' +
             '<button class="filter_remove" id="Remove_filter">Remove</button>'
         );
 
-        
+
 }
 
 
@@ -407,28 +401,19 @@ function filter_button() {
         //     filter.push(['brand', localStorage.getItem('filter_brand')])
         // }
         // localStorage.setItem('filter', filter);
-        
+
         localStorage.setItem('filter', JSON.stringify(filter));
-        // console.log( JSON.stringify(filter));
+      
 
         if (filter) {
+
             ajaxForSearch("?module=shop&op=filters", filter);
-            // console.log(filter);
+         
         }
         else {
             ajaxForSearch("?module=shop&op=list");
         }
-        // highlight(filter);
-
-        // $(document).on('click', '.filter_remove', function () {
-        //     localStorage.removeItem('filter_type');
-        //     localStorage.removeItem('filter_category');
-        //     filter.length = 0;
-        //     if (filter == 0) {
-        //         ajaxForSearch("modules/shop/crtl/crtl_shop.php?op=shopAll");
-        //         highlight(filter);
-        //     }
-        // });
+       
     });
 }
 
@@ -506,8 +491,8 @@ function load_search() {
     ajaxPromise(friendlyURL("?module=shop&op=filters_search"), 'POST', 'JSON', { 'filters_search': filters_search })
         .then(function (data) {
 
-            //  window.location.href = friendlyURL("?module=shop");
-            console.log(data);
+            // console.log(data);
+
             $("#containerShop").empty();
             $('.glider-prev').hide();
             $('.glider-next').hide();
@@ -541,10 +526,9 @@ function load_search() {
                         '</div>' +
                         '</div>'
 
-                );
+                    );
             }
-           
-            // location.reload();
+
             mapBox_all(data);
         }).catch(function () {
             $("#containerShop").empty();
@@ -554,33 +538,28 @@ function load_search() {
 }
 
 function load_jump(durl, filter1) {
-    // console.log(durl);
-    // var filter1 = JSON.parse(localStorage.getItem('filter1'));
+    
     ajaxPromise(durl, 'POST', 'JSON', { 'filter1': filter1 })
 
         .then(function (data) {
-            // console.log(data);
+          
             $("#containerShop").empty();
             for (row in data) {
                 $('<div></div>').appendTo('#containerShop')
                     .html(
 
-                        // '<div id="products" class="row list-group">'+
+                       
                         '<div class="item  col-xs-4 col-lg-4">' +
                         ' <div class="thumbnail">' +
                         '<img class="group list-group-image" src= "' + data[row].img_car + '"  alt="" />' +
                         '<div class="caption">' +
                         '<h4 class="group inner list-group-item-heading"> ' + 'Model:' + data[row].model + '</h4>' +
-                        // '<div id="div-map">'+
-                        // '<div id="map"></div>'+
                         '<p class="group inner list-group-item-text">' + 'Category:' + data[row].category + '</p>' +
                         '<div class="row">' +
                         '<div class="col-xs-12 col-md-6">' +
                         '<p class="lead">' + 'Price:' + data[row].price + '€</p>' +
                         '</div>' +
                         ' <div class="col-xs-12 col-md-6">' +
-                        // '<a class="btn btn-success id="' + data[row].id_car + '">Add to cart</a>'+
-                        // '<a class="more_info_list button  id="' + data[row].id_car + '">Read More</a>'+
                         '<a class="more_info_list button add" id="' + data[row].id_car + '">Read More</a>' +
                         '</div>' +
                         '</div>' +
@@ -604,37 +583,33 @@ function load_brand_filter(total_prod = 0, items_page = 3) {
 
     var array_brand = JSON.parse(localStorage.getItem('brand_filter'));
     var brand = array_brand[0].brand[0];
-    // console.log(brand);
     ajaxForSearch("?module=shop&op=home_filter", brand, total_prod, items_page);
 
 }
 
 function load_category_filter(total_prod = 0, items_page = 3) {
-    // console.log("soy los category filtros");
 
     var array_category = JSON.parse(localStorage.getItem('category_filter'));
     var category = array_category[0].category[0];
 
-    // console.log(category);
-
-    ajaxForSearch('?module=shop&op=filters' , category, total_prod, items_page);
+    ajaxForSearch('?module=shop&op=filters', category, total_prod, items_page);
 }
 
 function load_motor_filter(total_prod = 0, items_page = 3) {
-   
+
     var array_tmotor = JSON.parse(localStorage.getItem('motor_filter'));
     var type_motor = array_tmotor[0].type_motor[0];
 
     ajaxForSearch("?module=shop&op=home_filter", type_motor, total_prod, items_page);
-    // console.log(type_motor);
+
 }
 
 function load_popular_detail() {
+
     var array_id_cars = JSON.parse(localStorage.getItem('id_cars'));
     var id_cars = array_id_cars[0].id_cars[0];
 
     loadDetails(id_cars);
-
 
 }
 
@@ -679,7 +654,7 @@ function cars_related(loadeds = 0, type_car, total_items) {
                     if (data[row].id_car != undefined) {
                         $('<div></div>').attr({ 'id': data[row].id_car, 'class': 'more_info_list' }).appendTo('.title_content')
                             .html(
-                                
+
                                 '<div class="item">' +
                                 '<div class="sq_box shadow">' +
                                 '<div class="pdis_img"> ' +
@@ -692,7 +667,6 @@ function cars_related(loadeds = 0, type_car, total_items) {
                                 '</div>' +
                                 '<h4 class="mb-1"> <a href="details.php">' + data[row].id_brand + "  " + data[row].name_model + '</a> </h4>' +
                                 '<div class="price-box mb-2">' +
-                                // '<span class="price"> Price <i class="fa fa-inr"></i> 200 </span>'+
                                 '<span class="offer-price">  Price <i class="">$</i> ' + data[row].price + ' </span>' +
                                 '</div>' +
                                 '<div class="btn-box text-center">' +
@@ -754,10 +728,9 @@ function more_cars_related(type_car) {
     var items = 0;
     ajaxPromise(friendlyURL("?module=shop&op=count_cars_related"), 'POST', 'JSON', { 'type_car': type_car })
         .then(function (data) {
-            // console.log(data);
             var total_items = data[0].n_prod;
             cars_related(0, type_car, total_items);
-            $(document).on("click", '.load_more_button', function() {
+            $(document).on("click", '.load_more_button', function () {
                 items = items + 3;
                 $('.more_car__button').empty();
                 cars_related(items, type_car, total_items);
@@ -771,7 +744,7 @@ function more_cars_related(type_car) {
 function pagination() {
 
 
-    var filters_search = JSON.parse(localStorage.getItem('filters_search'));
+    // var filters_search = JSON.parse(localStorage.getItem('filters_search'));
     // var filtros = JSON.parse(localStorage.getItem('filter'));
     // var filter = filter
 
@@ -800,12 +773,11 @@ function pagination() {
 
     // }else{
 
-        var url = "?module=shop&op=count";
+    var url = "?module=shop&op=count";
     // }
     // ajaxPromise(friendlyURL(url), 'POST', 'JSON', { 'brand_filter': brand_filter })
     ajaxPromise(friendlyURL(url), 'POST', 'JSON', {})
         .then(function (data) {
-            // console.log(data);
 
             var total_prod = data[0].contador;
 
@@ -841,19 +813,12 @@ function click_like(id_car, lugar) {
             .then(function (data) {
                 console.log(data);
 
-                if(data == 'like'){
+                if (data == 'like') {
                     $("#" + id_car + ".fa-heart").css('color', '#ff0000');
-                }else if(data == 'unlike'){
+                } else if (data == 'unlike') {
                     $("#" + id_car + ".fa-heart").css('color', '#213454');
                 }
-                   
-                    
 
-
-                
-                // $("#" + id_car + ".fa-heart").toggleClass('like_red');
-                // $("#" + id_car + ".fa-solid fa-heart fa-lg").toggleClass('fa-regular fa-heart');
-                
             }).catch(function () {
                 window.location.href = "index.php?module=ctrl_exceptions&op=503&type=503&lugar=Function click_like SHOP";
             });
@@ -866,7 +831,7 @@ function click_like(id_car, lugar) {
         localStorage.setItem('id_car', id_car);
 
         toastr.warning("Debes de iniciar session");
-        setTimeout( 'window.location.href = friendlyURL("?module=login") ,3000');
+        setTimeout('window.location.href = friendlyURL("?module=login") ,3000');
     }
 }
 
@@ -878,42 +843,38 @@ function load_likes_user() {
             .then(function (data) {
                 console.log(data);
                 for (row in data) {
-                    
-                  
-                        $("#" + data[row].id_car + ".fa-heart").css('color', '#ff0000');
-                   
+
+
+                    $("#" + data[row].id_car + ".fa-heart").css('color', '#ff0000');
+
                 }
             }).catch(function () {
                 window.location.href = "index.php?module=ctrl_exceptions&op=503&type=503&lugar=Function load_like_user SHOP";
             });
     }
-    // console.log(token);
+
 }
 
 
-function add_cart(id_prod){
+function add_cart(id_prod) {
 
-        
-        // var codigo_producto = id_prod;
-        var token = localStorage.getItem('token');
-    
-        if(token == null){
-            setTimeout( window.location.href = friendlyURL("?module=login") ,1000);
-        }else{
-            ajaxPromise(friendlyURL("?module=shop&op=insert_cart") , 'POST', 'JSON', { 'id_prod': id_prod, 'token': token })
-            .then(function(data) {    
+    var token = localStorage.getItem('token');
+
+    if (token == null) {
+        setTimeout(window.location.href = friendlyURL("?module=login"), 1000);
+    } else {
+        ajaxPromise(friendlyURL("?module=shop&op=insert_cart"), 'POST', 'JSON', { 'id_prod': id_prod, 'token': token })
+            .then(function (data) {
                 console.log(data);
                 location.reload();
 
-                // $("#" + id_prod + ".fa-heart").toggleClass('like_red');
-            }).catch(function() {
+            }).catch(function () {
                 window.location.href = 'index.php?page=error503'
-            });   
-        }
+            });
     }
+}
 
 $(document).ready(function () {
-    // load_details();
     loadCars();
     clicks();
     print_filters();
