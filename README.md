@@ -10,7 +10,7 @@
 
 ## Descripción
 
-ECOSPORT es una innovadora aplicación web dedicada a la venta de coches de segunda mano. Diseñada con una arquitectura Modelo-Vista-Controlador (MVC), ofrece una  fácil de usar para los usuarios interesados en adquirir vehículos de calidad y asequibles.
+ECOSPORT es una innovadora aplicación web dedicada a la venta de coches de segunda mano. Diseñada con una arquitectura Modelo-Vista-Controlador (MVC), ofrece una interfaz fácil de usar para los usuarios interesados en adquirir vehículos de calidad y asequibles.
 
 Con ECOSPORT, puedes explorar una amplia selección de coches de segunda mano de diferentes marcas, modelos y categorías, todo en un solo lugar. La aplicación te permite buscar y filtrar los vehículos según tus preferencias, como el kilometraje, el precio y más. Además, cuenta con una interfaz visualmente atractiva que facilita la búsqueda y la comparación de diferentes opciones.
 
