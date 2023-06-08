@@ -14,7 +14,7 @@ ECOSPORT es una aplicación web dedicada a la venta de coches de segunda mano. D
 
 Con ECOSPORT, puedes explorar una amplia selección de coches de segunda mano de diferentes marcas, modelos y categorías  La aplicación te permite buscar y filtrar los vehículos según tus preferencias, como el kilometraje, el precio y más. 
 
-ECOSPORT utiliza el potente framework jQuery para brindar una experiencia de usuario fluida y dinámica. Con su amplia gama de funciones interactivas, como la carga de contenido en tiempo real, la validación de formularios y las animaciones suaves, la aplicación garantiza una navegación sin problemas y una interacción agradable.
+ECOSPORT utiliza el framework jQuery para brindar una experiencia de usuario fluida y dinámica. Con su amplia gama de funciones interactivas, como la carga de contenido en tiempo real y la validación de formularios, la aplicación garantiza una navegación sin problemas y una interacción agradable.
 
 ## Contenido 📖
 
@@ -73,4 +73,5 @@ La web se compone de los siguientes módulos:
 - PHP 7.0 o versiones superiores.
 - Servidor web compatible con PHP ( Apache).
 - Base de datos MySQL para almacenar la información de los vehículos y los datos de los usuarios.
+
 
