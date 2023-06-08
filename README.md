@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=bootstrap,css,html,js,php,github" />
+    <img src="https://skillicons.dev/icons?i=bootstrap,css,scss,html,js,php,github" />
   </a>
  <a   <div style="display: flex; align-items: flex-start;"><img src="https://techstack-generator.vercel.app/mysql-icon.svg" alt="icon" width="50" height="50" /></div></a>
 </p>
